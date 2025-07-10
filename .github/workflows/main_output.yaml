@@ -6,7 +6,7 @@ jobs:
     gerando_output:
         runs-on: ubuntu-latest
         outputs:
-            output-shell: ${{  steps.exemplo-output.outputs.action_random}}
+            output-shell: ${{ steps.exemplo-output.outputs.action_random }}
             output-generatedpassword: ${{ steps.generatedpassword.outputs.password }}
         steps:
             - name: gerando Output com Shell
