@@ -7,12 +7,12 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: gerando Output com Shell
-            id: exemplo-output
-            run: |
-              ACTION_RAMDOM=$(( $RAMDOM))
-              echo "action_random=$ACTION_RANDOM" >> $giTHUB_OUTPUT
+              id: exemplo-output
+              run: |
+                ACTION_RAMDOM=$(( $RAMDOM))
+                echo "action_random=$ACTION_RANDOM" >> $giTHUB_OUTPUT
             - name: Exibindo o Output da action exemplooutput  
-            run: echo "${{ steps.exemplo-output.action_random }}"
+              run: echo "${{ steps.exemplo-output.action_random }}"
             
 
             
