@@ -12,4 +12,4 @@ jobs:
                 ACTION_RAMDOM=$(( $RAMDOM))
                 echo "action_random=$ACTION_RANDOM" >> $GITHUB_OUTPUT
             - name: Exibindo o Output da action exemplooutput  
-              run: echo "${{ steps.exemplo-output.action_random }}"
+              run: echo "${{ steps.exemplo-output.outputs.action_random }}"
