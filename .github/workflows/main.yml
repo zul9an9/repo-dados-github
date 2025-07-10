@@ -1,38 +1,40 @@
 name: Exemplo Input
 run-name: exemplo workflow para input, executando por ${{ github.actor}}
 on:
-  workflow_dispatch:
-    inputs:
-      versao:
-        type: string
-        required: true
-        default: "dev"
-        description: "Versao da Nova release"
-      numero_card:
-        type: number
-        required: true
-        description: "Numero do card da tarefa do commit"        
-      fazer_deploy:
-        type: bolean
-        required: true
-        default: "dev"
-        description: "Especifica se deve ou nao fazer o deploy"
-      ambiente:
-        type: choice
-        required: true
-        description: "Ambiente de Deploy"
-        options:
-          - Desenvolvimento
-          - Homologacao
-          - Producao
+    workflow_dispatch:
+        inputs:
+            versao:
+                type: string
+                required: true
+                default: "dev"
+                description: "Versao da Nova release"
+            numero_card:
+                type: number
+                required: true
+                description: "Numero do card da tarefa do commit"        
+            fazer_deploy:
+                type: bolean
+                required: true
+                default: "dev"
+                description: "Especifica se deve ou nao fazer o deploy"
+            ambiente:
+                type: choice
+                required: true
+                description: "Ambiente de Deploy"
+                options:
+                    - Desenvolvimento
+                    - Homologacao
+                    - Producao
 jobs:
-  valores_input:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Exibindo o Contexto de input completo
-        run: | 
-          echo "Esses sao os valores passados no inputs"
-          echo "Versao: ${{ inputs.versao }}"
-          echo "Card: ${{ inputs.numero_card }} "
-          echo "Fazer deploy:  ${{ inputs.fazer_deploy }}"
-          echo "Ambiente:  ${{ inputs.ambiente }} "
+    valores_input:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Exibindo o Contexto de input completo
+              run: echo "${{ toJson(inputs) }}" 
+            - name: Exibindo os Valores de input Individualmente
+              run: | 
+                echo "Esses sao os valores passados no inputs"
+                echo "Versao: ${{ inputs.versao }}"
+                echo "Card: ${{ inputs.numero_card }} "
+                echo "Fazer deploy:  ${{ inputs.fazer_deploy }}"
+                echo "Ambiente:  ${{ inputs.ambiente }} "
