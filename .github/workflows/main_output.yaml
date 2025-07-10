@@ -1,0 +1,88 @@
+name: Exemplo Output
+run-name: exemplo workflow para output, executando por ${{ github.actor}}
+on:
+    workflow_dispatch:
+jobs:
+    gerand_output:
+        runs-on: ubuntu-latest
+        steps:
+            - name: gerando Output com Shell
+            id: exemplo-output
+            run: |
+              ACTION_RAMDOM=$(( $RAMDOM))
+              echo "action_random=$ACTION_RANDOM" >> $giTHUB_OUTPUT
+            - name: Exibindo o Output da action exemplooutput  
+            run: echo "${{ steps.exemplo-output.action_random }}"
+            
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+              run: echo "${{ toJson(inputs) }}" 
+            - name: Exibindo os Valores de input Individualmente
+              run: | 
+                echo "Esses sao os valores passados no inputs"
+                echo "Versao: ${{ inputs.versao }}"
+                echo "Card: ${{ inputs.numero_card }} "
+                echo "Fazer deploy:  ${{ inputs.fazer_deploy }}"
+                echo "Ambiente:  ${{ inputs.ambiente }} "
