@@ -3,8 +3,11 @@ run-name: exemplo workflow para output, executando por ${{ github.actor}}
 on:
     workflow_dispatch:
 jobs:
-    gerand_output:
+    gerando_output:
         runs-on: ubuntu-latest
+        outputs:
+            output.shell: ${{  steps.exemplo-output.outputs.action_random}}
+            output.generatedpassword: ${{  steps.geeneratedpassword.outputs.password}}
         steps:
             - name: gerando Output com Shell
               id: exemplo-output
@@ -20,5 +23,17 @@ jobs:
                 length: 15
             - name: Exibindo o output da action de password
               run: echo "${{ steps.generatedpassword.outputs.password  }}"
+
+    exibindo_valores:
+        needs: [gerando_output]
+        runs-on: ubuntu-latest
+        steps:
+            - name: Exibindo os outputs do gerando_output
+              run: |
+                  echo "${{ needs.gerando_output.outputs.output-shell }}"
+                  echo "${{ needs.gerando_output.outputs.generatedpassword }}"
+                  
+              
+        runs-on: ubuntu-latest
             
               
