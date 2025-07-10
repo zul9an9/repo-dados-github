@@ -8,17 +8,16 @@ on:
         required: true
         default: "dev"
         description: "Versao da Nova release"
-    numero_card:
+      numero_card:
         type: number
         required: true
-        default: "dev"
         description: "Numero do card da tarefa do commit"        
-    fazer_deploy:
+      fazer_deploy:
         type: bolean
         required: true
         default: "dev"
         description: "Especifica se deve ou nao fazer o deploy"
-    ambiente:
+      ambiente:
         type: choice
         required: true
         description: "Ambiente de Deploy"
