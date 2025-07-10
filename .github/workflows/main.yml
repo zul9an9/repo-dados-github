@@ -1,4 +1,4 @@
-name; Exemplo Input
+name: Exemplo Input
 run-name: exemplo workflow para input, executando por ${{ github.actor}}
 on:
   workflow_dispatch:
