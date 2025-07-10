@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Exibindo o Contexto de input completo
-        run: 
+        run: | 
           echo "Esses sao os valores passados no inputs"
           echo "Versao: ${{ inputs.versao }}"
           echo "Card: ${{ inputs.numero_card }} "
