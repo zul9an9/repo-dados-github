@@ -32,8 +32,3 @@ jobs:
               run: |
                   echo "${{ needs.gerando_output.outputs.output-shell }}"
                   echo "${{ needs.gerando_output.outputs.generatedpassword }}"
-                  
-              
-        runs-on: ubuntu-latest
-            
-              
