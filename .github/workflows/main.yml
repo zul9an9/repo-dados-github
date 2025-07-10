@@ -33,7 +33,7 @@ jobs:
       - name: Exibindo o Contexto de input completo
         run:
           echo "Esses sao os valores passados no inputs"
-          echo: "Versao: ${{ inputs.versao }}"
-          echo: "Card: ${{ inputs.numero_card }} "
-          echo: "Fazer deploy:  ${{ inputs.fazer_deploy }}"
-          echo: "Ambiente:  ${{ inputs.ambiente }} "
+          echo "Versao: ${{ inputs.versao }}"
+          echo "Card: ${{ inputs.numero_card }} "
+          echo "Fazer deploy:  ${{ inputs.fazer_deploy }}"
+          echo "Ambiente:  ${{ inputs.ambiente }} "
