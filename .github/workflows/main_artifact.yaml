@@ -2,8 +2,9 @@ name: Exemplo Artifact
 run-name: exemplo workflow para Artifact, executando por ${{ github.actor}}
 on:
     workflow_dispatch:
+    
 env:
-  nome-artefato: teste-artefato
+    nome-artefato: teste-artefato
 jobs:
     upload-artifact:
         runs-on: ubuntu-latest
